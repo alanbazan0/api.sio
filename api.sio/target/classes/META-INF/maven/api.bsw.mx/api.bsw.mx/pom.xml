@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>api.sio</groupId>
-  <artifactId>api.sio</artifactId>
+  <groupId>api.bsw.mx</groupId>
+  <artifactId>api.bsw.mx</artifactId>
   <version>0.0.1</version>
   <name>API SIO</name>
   <description>API SIO</description>
@@ -37,8 +37,22 @@
    </dependencies>
   
     <build>
-    <finalName>api.sio</finalName>
+    <finalName>api.bsw.mx</finalName>
     <plugins>
+	    <plugin>
+	<artifactId>maven-deploy-plugin</artifactId>
+	<version>2.8.2</version>
+	<executions>
+	<execution>
+	<id>default-deploy</id>
+	<phase>deploy</phase>
+	<goals>
+	<goal>deploy</goal>
+	</goals>
+	</execution>
+	</executions>
+	</plugin>
+    
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -53,4 +67,16 @@
      
     </plugins>
   </build>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+  
 </project>
