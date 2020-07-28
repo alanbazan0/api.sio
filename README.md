@@ -1,2 +1,2 @@
 # api.sio
-API para crear consultar personalizadas de componentes
+API para crear consultas personalizadas de componentes
